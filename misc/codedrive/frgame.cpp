@@ -16,7 +16,7 @@ int main()
                 b = b + d;
                 if (a >= b)
                 {
-                    cout << "N\n";
+                    cout << "N\n" ;
                 }
                 else
                     cout << "S\n";
