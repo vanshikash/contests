@@ -2,20 +2,7 @@
 using namespace std;
 int main()
 {
-    int t = 1;
-    cin >> t;
-    while(t --)
-    {
-       int k;
-       cin>>k; 
-       int count = 0;
-       while(k%2 == 0)
-       {
-           k/=2;
-           count++;
-       }
-       cout<<count<<endl;
-       
-    }
+    int a[2][3] = {10,20,30,40,50,60};
+    cout<<(*a + 2)<<(**a + 5)<<(*(a+1) + 2)<<endl;
     return 0;
 }
