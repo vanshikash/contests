@@ -22,12 +22,20 @@ int main()
 
         for(int i = 0;i<n;i++)
         {
-            dt[i] = min(ct[i]-gt[i], ct[i]-ct[i-1]);
+            if(i==0)
+            {
+                dt[i]=ct[i]-gt[i];
+            }
+            else 
+            {
+                dt[i] = min(ct[i]-gt[i], ct[i]-ct[i-1]);
+            }
         }
         for(int i = 0;i<n;i++)
         {
-            cout<<dt[i];
+            cout<<dt[i]<<" ";
         }
+        cout<<endl;
 
     }
     return 0;

@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 int main()
 {
     int t = 1;
@@ -9,6 +10,7 @@ int main()
     {
         int n;
         cin >> n;
+        int flag = 0;
         int a[n];
         int b[n];
         for (int i = 0; i < n; i++)
@@ -19,30 +21,41 @@ int main()
         {
             cin >> b[i];
         }
-        int maxdiff = 0;
         for (int i = 0; i < n; i++)
         {
-            if(a[i]<b[i])
+            if (a[i] < b[i])
             {
-                cout<<"NO\n";
+                cout << "NO\n";
+                flag = -1;
+                break;
             }
-            int maxxdiff = max(maxdiff, abs(a[i]-b[i]))
         }
-        
-        
-        
-        for(int i = 0;i<n;i++)
+        int d[n];
+        if (flag != -1)
         {
-            int maxx = max(a[i]-maxxdiff,0);
-            if(maxx == b[i] )
+            for (int i = 0; i < n; i++)
             {
-                continue;
+                d[i] = a[i] - b[i];
             }
+            for (int i = 1; i < n; i++)
+            {
 
+                // try adding if flag != -1 here
+                if ((d[i] != d[i - 1]))
+                {
+                    if (b[i] != 0)
+                    {
+                        cout << "no\n";
+                        flag = -1;
+                        break;
+                    }
+                }
+            }
+            if (flag != -1)
+            {
+                cout << "yes\n";
+            }
         }
-
-       
-    
     }
     return 0;
 }
